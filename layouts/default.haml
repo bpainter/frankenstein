@@ -1,0 +1,11 @@
+!!!
+%html{:lang => "en", :class => "no-js"}
+    %head
+        = render "partials/_head"
+    %body
+        = render "partials/_header"
+        
+        = yield
+        
+        = render "partials/_footer"
+        = render "partials/_bottom"
