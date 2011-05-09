@@ -1,0 +1,18 @@
+a,
+a:visited {
+	outline : none;
+	color : rgb(23,119,175);
+	text-decoration : none;
+}
+
+a:hover {
+	outline : none;
+	color : rgb(40,40,40);
+	text-decoration : underline;
+}
+
+a:active,
+a:focus {
+	outline : none;
+	color : rgb(0,0,0);
+}

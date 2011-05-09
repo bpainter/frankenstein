@@ -1,0 +1,19 @@
+figure {
+	margin-bottom : 1.5em;
+}
+
+figure img,
+figure object,
+figure embed {
+	margin-bottom : .75em;
+	max-width : 100%;
+}
+
+figcaption {
+	display : block;
+	font-weight : normal;
+}
+
+img {
+	-ms-interpolation-mode : bicubic;
+}
