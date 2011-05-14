@@ -1,7 +1,13 @@
+/* ----------------------------------------------------
+=clearfix
+- prevents elements with floated elements inside
+  from collapsing
+- helps clear floats & works similar to using
+  <div style="clear:both"></div> except cleaner
+---------------------------------------------------- */
 .clearfix {
 	zoom : 1;
 }
-
 .clearfix:before,
 .clearfix:after {
 	content : "\0020";
@@ -9,7 +15,6 @@
 	height : 0;
 	overflow : hidden;
 }
-
 .clearfix:after {
 	clear : both;
 }

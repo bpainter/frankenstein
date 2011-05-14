@@ -1,19 +1,24 @@
+/* ----------------------------------------------------
+=images
+---------------------------------------------------- */
 figure {
-	margin-bottom : 1.5em;
+    margin-bottom : 1.5em;
 }
 
 figure img,
 figure object,
 figure embed {
-	margin-bottom : .75em;
-	max-width : 100%;
+    margin-bottom : .75em;
+    max-width : 100%;
 }
 
 figcaption {
-	display : block;
-	font-weight : normal;
+    display : block;
+    font-weight : normal;
 }
 
+/* helps IE resize images without making them pixelated 
+   very handy for responsive designs */
 img {
-	-ms-interpolation-mode : bicubic;
+    -ms-interpolation-mode : bicubic;
 }

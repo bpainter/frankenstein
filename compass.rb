@@ -5,7 +5,7 @@
 http_path       = "/"
 project_path    = "."
 
-sass_dir        = "content/stylesheets"
+sass_dir        = "content/assets/stylesheets"
 css_dir         = "output/assets/stylesheets"
 images_dir      = "output/assets/images"
 javascripts_dir = "output/assets/js"

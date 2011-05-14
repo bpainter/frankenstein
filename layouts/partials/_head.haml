@@ -14,12 +14,12 @@
 %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
 
 -# takes care of the mobile browsers that just can't do as much
-%link{:href => "/assets/stylesheets/handheld.css"}
+%link{:href => "/assets/stylesheets/handheld.css", :rel => 'stylesheet'}
 
 -# Stylesheet for all browsers. Different viewport sizes are
 -# created as partials in '/content/assets/stylesheets/' and then
 -# included in the 'screen.css' using a Sass '@import'.
-%link{:href => "/assets/stylesheets/screen.css"}
+%link{:href => "/assets/stylesheets/screen.css", :rel => 'stylesheet'}
 
 -# Modernizr is first. All other javascript has been placed in
 -# '/layouts/partials/_footer.haml' which is rendered right before

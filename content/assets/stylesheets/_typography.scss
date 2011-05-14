@@ -1,98 +1,102 @@
+/* ----------------------------------------------------
+=typography
+---------------------------------------------------- */
 p,
 ol,
 ul,
 dl,
 address {
-	margin-bottom : 1.5em;
-	font-size : 1em; /* 16 / 16 = 1 */
+    font-size : 1em; /* 16 / 16 = 1 */
+    margin-bottom : 1.5em;
 }
 
 ul,
 ol {
-	margin : 0 0 1.5em -24px;
-	padding-left : 24px;
+    margin : 0 0 1.5em -24px;
+    padding-left : 24px;
 }
 
 ul {
-	list-style-type : disc;
+    list-style-type : disc;
 }
 
 ol {
-	list-style-type : decimal;
+    list-style-type : decimal;
 }
 
 li ul,
 li ol {
-	margin : 0;
-	font-size : 1em; /* 16 / 16 = 1 */
+    font-size : 1em; /* 16 / 16 = 1 */
+    margin : 0;
 }
 
 dl,
 dd {
-	margin-bottom : 1.5em;
+    margin-bottom : 1.5em;
 }
 
 dt {
-	font-weight : normal;
+    font-weight : normal;
 }
 
 blockquote {
-	margin : 0 0 1.5em -24px;
-	padding-left : 24px;
-	border-left : 1px solid rgb(200,200,200);
-	font-style : italic;
+    border-left : 1px solid rgb(200,200,200);
+    font-style : italic;
+    margin : 0 0 1.5em -24px;
+    padding-left : 24px;
 }
+    
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-	content : '';
-	content : none;
+    content : '';
+    content : none;
 }
 
 b,
 strong {
-	font-weight : bold;
+    font-weight : bold;
 }
 
 i,
 em {
-	font-style : italic;
+    font-style : italic;
 }
 
 sup,
 sub {
-	position : relative;
-	font-size : 75%;
-	line-height : 0;
+    font-size : 75%;
+    line-height : 0;
+    position : relative;
 }
 
 sup {
-	top : -.5em;
+    top : -.5em;
 }
 
 sub {
-	bottom : -.25em;
+    bottom : -.25em;
 }
 
 address {
-	font-style : normal;
+    font-style : normal;
 }
 
 pre {
-	margin-bottom : 1.5em;
-	white-space : pre;
-	white-space : pre-wrap;
-	word-wrap : break-word;
+    margin-bottom : 1.5em;
+    white-space : pre;
+    white-space : pre-wrap;
+    word-wrap : break-word;
 }
 
 pre,
 code {
-	font : .875em 'andale mono', 'lucida console', monospace;
-	line-height : 1.5;
+    font : .875em 'andale mono', 'lucida console', monospace;
+    line-height : 1.5;
 }
 
 small {
-	font-size : 1em; /* 16 / 16 = 1 */
+    font-size : 1em; /* 16 / 16 = 1 */
 }

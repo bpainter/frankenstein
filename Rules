@@ -39,13 +39,13 @@ compile '/assets/stylesheets/_*/' do
     # don’t compile partials
 end
 
-compile '/assets/stylesheets/*/' do
-    filter :sass, Compass.sass_engine_options
-end
-
 route '/assets/stylesheets/_*/' do
     # don't output partials
     nil
+end
+
+compile '/assets/stylesheets/*/' do
+    filter :sass, Compass.sass_engine_options
 end
 
 route '/assets/stylesheets/*/' do

@@ -1,130 +1,161 @@
-/* Forms
+/* ----------------------------------------------------
+=forms
+---------------------------------------------------- */
 
-_____________________________________________________
+form {
+    margin-bottom : 1.5em;
+}
 
-320 and Up boilerplate extension
+fieldset {
+    border-width : 0;
+    margin-bottom : 1.5em;
+    padding : 0;
+}
 
-Author: Andy Clarke
-Version: 0.9b
-URL: http://stuffandnonsense.co.uk/projects/320andup/
-License: http://creativecommons.org/licenses/MIT/
-_____________________________________________________
+legend {
+    font-weight : bold;
+    font-size : 1.2em;
+    margin-top : -.2em 0 1em 0;
+}
 
-*/
+label {
+    font-weight : normal;
+}
 
-form { 
-margin-bottom : 1.5em; }
-
-fieldset { 
-margin-bottom : 1.5em; 
-padding : 0; 
-border-width : 0; }
-
-legend { 
-margin-top : -.2em 0 1em 0; 
-font-weight : bold; 
-font-size : 1.2em; }
-
-label { 
-font-weight : normal; }
-
-button, 
-input, 
-select, 
-textarea { 
-margin : 0; }
+button,
+input,
+select,
+textarea {
+    margin : 0;
+}
 
 label,
-input[type="button"], 
-input[type="submit"], 
-input[type="image"], 
-button { 
-cursor : pointer; }
+input[type="button"],
+input[type="submit"],
+input[type="image"],
+button {
+    cursor : pointer;
+}
 
-input, 
-select { 
-vertical-align : middle; }
+input,
+select {
+    vertical-align : middle;
+}
 
-input[type=text], 
+input[type=text],
 input[type=password],
 input[type=tel],
 input[type=email],
 input[type=url],
 input[type=search],
 textarea {
-padding : 2px;
-width : 100%;
-background-color : rgb(255,255,255);
-border : 1px solid rgb(200,200,200); 
-font-family : inherit;
-font-size : inherit; }
+    background-color : rgb(255,255,255);
+    border : 1px solid rgb(200,200,200);
+    font-family : inherit;
+    font-size : inherit;
+    padding : 2px;
+    width : 100%;
+}
 
-input[type=text]:focus, 
+input[type=text]:focus,
 input[type=password]:focus,
 input[type=tel]:focus,
 input[type=email]:focus,
 input[type=url]:focus,
 input[type=search]:focus,
 textarea:focus {
-border-color : rgb(100,100,100); }
+    border-color : rgb(100,100,100);
+}
 
-input[type="radio"] { 
-vertical-align : text-bottom; }
+input[type="radio"] {
+    vertical-align : text-bottom;
+}
 
-input[type="checkbox"] { 
-vertical-align : bottom; }
+input[type="checkbox"] {
+    vertical-align : bottom;
+}
+
+::-webkit-input-placeholder {
+    font-size : .875em;
+    line-height : 1.4;
+    padding : 10px;
+}
+
+input:-moz-placeholder {
+    font-size : .875em;
+    line-height : 1.4;
+    padding : 10px;
+}
+
+div,
+input,
+textarea {
+    -webkit-box-sizing : border-box;
+    -moz-box-sizing : border-box;
+    -o-box-sizing : border-box;
+    box-sizing : border-box;
+}
 
 /* Colors for form validity */
-input:valid, 
-textarea:valid   {  
-/* Styles */ }
+input:valid,
+textarea:valid {
+/* Styles */
+}
 
-input:invalid, 
+input:invalid,
 textarea:invalid {
--webkit-box-shadow : 0 0 2px rgb(255,0,0); 
--moz-box-shadow : 0 0 2px rgb(255,0,0);
-box-shadow : 0 0 2px rgb(255,0,0); }
+    -webkit-box-shadow : 0 0 2px rgb(255,0,0);
+    -moz-box-shadow : 0 0 2px rgb(255,0,0);
+    box-shadow : 0 0 2px rgb(255,0,0);
+}
 
-.no-boxshadow input:invalid, 
+.no-boxshadow input:invalid,
 .no-boxshadow textarea:invalid {
-background-color : rgb(240,221,221); }
+    background-color : rgb(240,221,221);
+}
 
-select { 
-margin : .5em 0;
-background-color : rgb(255,255,255);
-border-width : 1px; 
-border-style : solid; }
+select {
+    background-color : rgb(255,255,255);
+    border-width : 1px;
+    border-style : solid;
+    margin : .5em 0;
+}
 
-textarea { 
-overflow : auto;
-padding : 2px; }
+textarea {
+    overflow : auto;
+    padding : 2px;
+}
 
-button {  
-width : auto;
-padding : 8px 12px 9px;
-overflow : visible; 
-background-color : rgb(227,227,227);
-border : 1px solid rgb(204,204,204);
-border-bottom-color : rgb(187,187,187);
-font-family : "Helvetica Neue", Helvetica, Arial;
-font-size : .875em;
-font-weight: bold;
-text-align : center; 
-line-height : 1; 
-color : rgb(51,51,51);
-text-shadow : 0 1px 0 rgb(255,255,255); }
+button {
+    background-color : rgb(227,227,227);
+    border : 1px solid rgb(204,204,204);
+    border-bottom-color : rgb(187,187,187);
+    color : rgb(51,51,51);
+    font-size : .875em;
+    font-weight: bold;
+    line-height : 1;
+    overflow : visible;
+    padding : 8px 12px 9px;
+    text-align : center;
+    text-shadow : 0 1px 0 rgb(255,255,255);
+    width : auto;
+}
 
 button:hover {
-cursor : pointer; 
-background-color : rgb(217,217,217); }
+    background-color : rgb(217,217,217);
+    cursor : pointer;
+}
 
 .ie6 legend,
-.ie7 legend { 
-margin-left : -7px; }
+.ie7 legend {
+    margin-left : -7px;
+}
 
-.ie6 input { 
-vertical-align : text-bottom; }
+.ie6 input {
+    vertical-align : text-bottom;
+}
 
 .ie7 input[type="checkbox"],
-.iem7 input[type="checkbox"] { 
-vertical-align : baseline; }
+.iem7 input[type="checkbox"] {
+    vertical-align : baseline;
+}
