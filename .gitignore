@@ -4,3 +4,4 @@ output/*
 Gemfile.lock
 .rvmrc
 .livereload
+tmp/*

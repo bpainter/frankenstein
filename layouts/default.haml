@@ -2,7 +2,7 @@
 %html{:lang => "en", :class => "no-js"}
     %head
         = render "partials/_head"
-    %body
+    %body{:id => "#{@item[:bodyID]}", :class => "#{@item[:bodyClasses]}"}
         = render "partials/_header"
         
         = yield

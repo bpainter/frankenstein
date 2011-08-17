@@ -1,3 +1,4 @@
+require 'susy'
 # ----------------------------------------------------------------------
 # config file for SASS/Compass
 # http://beta.compass-style.org/help/tutorials/configuration-reference/

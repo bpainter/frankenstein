@@ -53,6 +53,11 @@ route '/assets/stylesheets/*/' do
     item.identifier.chop + '.css'
 end
 
+
+# ----------------------------------------------------------------------
+# robots.txt & humans.txt files
+# ----------------------------------------------------------------------
+
 # ----------------------------------------------------------------------
 # content
 # filters and compiles the haml content then takes the content
@@ -73,6 +78,9 @@ compile '*' do
         filter :erb
         filter :rdiscount
     elsif ext == 'html'
+
+    elsif ext == 'txt'
+        item.identifier
     else
         raise "Filter is not configured for #{item.identifier} in Rules file."
     end

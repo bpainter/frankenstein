@@ -8,6 +8,7 @@ gem 'nanoc3'
 gem 'haml'
 gem 'sass'
 gem 'compass'
+gem 'compass-susy-plugin'
 
 gem 'mime-types'
 
@@ -19,6 +20,7 @@ gem 'bluecloth'
 gem 'guard'
 gem 'rb-fsevent'
 gem 'guard-livereload'
+gem 'guard-nanoc'
 
 # you can install growl if you want notification support on OSX
-# gem install growl
+gem 'growl'

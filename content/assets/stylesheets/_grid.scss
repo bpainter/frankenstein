@@ -1,0 +1,97 @@
+// Grid ----------------------------------------------------------------------
+// based on a 960 grid, magically converts pixels to %
+$total-cols             : 12;
+$col-width              : 80px;
+$gutter-width           : 20px;
+$side-gutter-width      : 0;
+
+$show-grid-backgrounds  : true;
+
+/* ----------------------------------------------------
+=grid
+---------------------------------------------------- */
+.xx{
+    & > .col1,
+    & > .col2{
+        @include columns(6);
+    }
+    & > .col2{
+        @include omega(6);
+    }
+}
+.xxx{
+    & > .col1,
+    & > .col2,
+    & > .col3{
+        @include columns(4);
+    }
+    & > .col3{
+        @include omega(4);
+    }
+}
+.xxxx{
+    & > .col1,
+    & > .col2,
+    & > .col3,
+    & > .col4{
+        @include columns(3);
+    }
+    & > .col4{
+        @include omega(3);
+    }
+}
+.xxxxxx{
+    & > .col1,
+    & > .col2,
+    & > .col3,
+    & > .col4,
+    & > .col5,
+    & > .col6{
+        @include columns(2);
+    }
+    & > .col6{
+        @include omega(6);
+    }
+}
+.xi{
+    & > .col1 {
+        @include columns(8);
+    }
+    & > .col2{
+       @include columns(4);
+       @include omega(4);
+    }
+}
+.ix{
+    & > .col1 {
+        @include columns(8);
+        @include omega(8);
+    }
+    & > .col2{
+       @include columns(4);
+    }
+}
+.xxi{
+    & > .col1 {
+        @include columns(5);
+    }
+    & > .col2{
+       @include columns(5);
+    }
+    & > .col3{
+        @include columns(2);
+        @include omega(2);
+    }
+}
+.ixx{
+    & > .col1 {
+        @include columns(2);
+    }
+    & > .col2{
+       @include columns(5);
+    }
+    & > .col3{
+        @include columns(5);
+        @include omega(5);
+    }
+}

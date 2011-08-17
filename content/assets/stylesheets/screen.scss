@@ -1,5 +1,12 @@
 // required to load the various Compass mixins
 @import "compass"; 
+
+// fixed or fluid grid system
+// if by chance you get the error "File to import not found or unreadable: susy"
+// clean up the sass cache & recompile the SASS files
+// 'compass clean'
+@import "susy";
+
 // a setup file to hold setup variables & custom mixins
 @import "setup";   
 
@@ -14,11 +21,16 @@ URL: http://stuffandnonsense.co.uk/projects/320andup/
 @import "reset";
 @import "clearfix";
 @import "root";
+@import "fonts";
+@import "typography";
 @import "headings";
 @import "typography";
 @import "links";
 @import "images";
 @import "tables";
+@import "forms";
+@import "grid";
+
 
 /* global components - headers, footers, etc */
 /* navigation */

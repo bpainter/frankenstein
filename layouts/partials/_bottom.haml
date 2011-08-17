@@ -1,6 +1,6 @@
 -# Loads jQuery from Googles CDN. If there's no internet connection it'll
 -# fall back to the local version
-%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"}
+%script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"}
 :javascript
     window.jQuery || document.write('<script src="/assets/js/libs/jquery.js">\x3C/script>')
 
@@ -11,7 +11,6 @@
 /[if (lt IE 9) & (!IEMobile)]
     <script src="/assets/js/libs/domassistant.js"></script>
     <script src="/assets/js/libs/selectivizr.js"></script>
-    <script src="/assets/js/libs/respond.js"></script>
 
 -# Google analytics code. You can set the the site ID is set in the config.yaml file.
 -# This code snippet will track a single domain with multiple subdomains
