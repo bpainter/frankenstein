@@ -33,7 +33,7 @@ end
 
 desc "Watches and automatically compiles the site"
 task :auto => :compile do
-  sh "nanoc auto"
+  sh "nanoc auto --handler thin"
 end
 
 desc "Compile SCSS for main files & widgets into CSS"
@@ -58,8 +58,5 @@ end
 task :build => [:compile_css, :compile]
 
 task :deploy => [:build, :sync]
-
-# task :deploy => [:build, :sync]
-# task :deploy => [:compile, :sync]
 
 task :default => :deploy

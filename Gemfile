@@ -1,5 +1,6 @@
 source :gemcutter
 
+gem 'thin'
 gem 'rake'
 gem 'rack'
 
@@ -20,7 +21,7 @@ gem 'bluecloth'
 gem 'guard'
 gem 'rb-fsevent'
 gem 'guard-livereload'
-gem 'guard-nanoc'
+# gem 'guard-nanoc'
 
 # you can install growl if you want notification support on OSX
 gem 'growl'
