@@ -1,0 +1,171 @@
+// ---------------------------------------------------- 
+// Reset
+// Based on normalize.css – puts default elements in a
+// more consistent state for better cross-browser
+// support & rendering
+// ---------------------------------------------------- 
+
+// ---------------------------------------------------- 
+// Resets every element to use border-box, a much
+// more friendly way to calculate margins, padding,
+// borders, etc. for the box model
+// ---------------------------------------------------- 
+* {
+    @include box-sizing("border-box");
+}
+
+// ---------------------------------------------------- 
+// Display elements in IE6-9 and FF3
+// ---------------------------------------------------- 
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+// ---------------------------------------------------- 
+// Display block in IE6-9 and FF3
+// ---------------------------------------------------- 
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+// ---------------------------------------------------- 
+// Prevents modern browsers from displaying 'audio' 
+// without controls
+// ---------------------------------------------------- 
+audio:not([controls]) {
+    display: none;
+}
+
+// ---------------------------------------------------- 
+// Base settings
+// ---------------------------------------------------- 
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+// Focus states
+// mimics focus in Webkit browsers
+a{
+  &:focus{
+    @include tab-focus();  
+  }
+  &:hover, 
+  &:active{
+    outline: 0;  
+  }
+}
+
+// ---------------------------------------------------- 
+// =sub, sup
+// Prevents sub and sup affecting line-height in all 
+// browsers
+// ---------------------------------------------------- 
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+
+// ---------------------------------------------------- 
+// =img
+// makes the images inherently responsive, 
+// removes the border for images inside of a link,
+// fixes image rendering in IE on resize
+// ---------------------------------------------------- 
+img {
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+  -ms-interpolation-mode: bicubic;
+}
+
+// ---------------------------------------------------- 
+// =abbr
+// better style for abbreviations
+// ---------------------------------------------------- 
+abbr[title] {
+  border-bottom : 1px dotted;
+  cursor : help;
+}
+// ---------------------------------------------------- 
+// =forms
+// resets various form elements so they remain somewhat
+// consistent x-browser.
+// ---------------------------------------------------- 
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  margin: 0;
+  vertical-align: middle;
+}
+
+// Fixes inner spacing ie IE6/7
+button,
+input {
+  line-height: normal;
+  *overflow: visible; 
+}
+
+// Fixes inner padding and border oddities in FF3/4
+button::-moz-focus-inner,
+input::-moz-focus-inner { 
+  padding: 0;
+  border: 0;
+}
+
+// Cursors on all buttons applied consistently
+// including iOS
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer; 
+  -webkit-appearance: button;
+}
+
+// Fixes Appearance in webkit browsers to match
+// normal inputs instead of the default rounded input
+input[type="search"] { 
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;  
+}
+
+// Fixes inner-padding issues in Chrome OSX, Safari 5
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
+// Remove vertical scrollbar in IE6-9 & fixes alignment
+textarea {
+  overflow: auto; 
+  vertical-align: top; 
+}
+

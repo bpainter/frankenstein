@@ -1,7 +1,4 @@
-## Remove the rakefile in favor of the newer Nanoc Commands, found in /commands
-## Examples: http://www.remerson.plus.com/articles/nanoc-rake/
-
-require 'nanoc/tasks'
+require 'nanoc3/tasks'
 
 # begin
 #   # Try to require the preresolved locked set of gems.
@@ -12,6 +9,8 @@ require 'nanoc/tasks'
 #   require "bundler"
 #   Bundler.setup
 # end
+
+require 'nanoc3/tasks'
 
 require 'fileutils'
 %w{yaml}.each{|lib| require lib}

@@ -1,0 +1,382 @@
+// BUTTON STYLES
+// -------------
+
+
+// Base styles
+// --------------------------------------------------
+
+// Core
+.btn {
+  display: inline-block;
+  @include ie7-inline-block();
+  padding: 4px 10px 4px;
+  margin-bottom: 0; // For input.btn
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  *line-height: 20px;
+  color: $grayDark;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(255,255,255,.75);
+  vertical-align: middle;
+  cursor: pointer;
+  @include buttonBackground($btnBackground, $btnBackgroundHighlight);
+  border: 1px solid $btnBorder;
+  *border: 0; // Remove the border to prevent IE7's black border on input:focus
+  border-bottom-color: darken($btnBorder, 10%);
+  @include border-radius(4px);
+  @include ie7-restore-left-whitespace(); // Give IE7 some love
+  @include box-shadow(#{inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)});
+}
+
+// Hover state
+.btn:hover {
+  color: $grayDark;
+  text-decoration: none;
+  background-color: darken($white, 10%);
+  *background-color: darken($white, 15%); /* Buttons in IE7 don't get borders, so darken on hover */
+  background-position: 0 -15px;
+
+  // transition is only when going to hover, otherwise the background
+  // behind the gradient (there for IE<=9 fallback) gets mismatched
+  @include transition(background-position .1s linear);
+}
+
+// Focus state for keyboard and accessibility
+.btn:focus {
+  @include tab-focus();
+}
+
+// Active state
+.btn.active,
+.btn:active {
+  background-color: darken($white, 10%);
+  background-color: darken($white, 15%) \9;
+  background-image: none;
+  outline: 0;
+  @include box-shadow(#{inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)});
+}
+
+// Disabled state
+.btn.disabled,
+.btn[disabled] {
+  cursor: default;
+  background-color: darken($white, 10%);
+  background-image: none;
+  @include opacity(65);
+  @include box-shadow(none);
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+  padding: 9px 14px;
+  font-size: $baseFontSize + 2px;
+  line-height: normal;
+  @include border-radius(5px);
+}
+.btn-large [class^="icon-"] {
+  margin-top: 1px;
+}
+
+// Small
+.btn-small {
+  padding: 5px 9px;
+  font-size: $baseFontSize - 2px;
+  line-height: $baseLineHeight - 2px;
+}
+.btn-small [class^="icon-"] {
+  margin-top: -1px;
+}
+
+// Mini
+.btn-mini {
+  padding: 2px 6px;
+  font-size: $baseFontSize - 2px;
+  line-height: $baseLineHeight - 4px;
+}
+
+
+// Alternate buttons
+// --------------------------------------------------
+
+// Set text color
+// -------------------------
+.btn-primary,
+.btn-primary:hover,
+.btn-warning,
+.btn-warning:hover,
+.btn-danger,
+.btn-danger:hover,
+.btn-success,
+.btn-success:hover,
+.btn-info,
+.btn-info:hover,
+.btn-inverse,
+.btn-inverse:hover {
+  color: $white;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.25);
+}
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active {
+  color: rgba(255,255,255,.75);
+}
+
+// Set the backgrounds
+// -------------------------
+.btn {
+  // reset here as of 2.0.3 due to Recess property order
+  border-color: #ccc;
+  border-color: rgba(0,0,0,.1) rgba(0,0,0,.1) rgba(0,0,0,.25);
+}
+.btn-primary {
+  @include buttonBackground($btnPrimaryBackground, $btnPrimaryBackgroundHighlight);
+}
+// Warning appears are orange
+.btn-warning {
+  @include buttonBackground($btnWarningBackground, $btnWarningBackgroundHighlight);
+}
+// Danger and error appear as red
+.btn-danger {
+  @include buttonBackground($btnDangerBackground, $btnDangerBackgroundHighlight);
+}
+// Success appears as green
+.btn-success {
+  @include buttonBackground($btnSuccessBackground, $btnSuccessBackgroundHighlight);
+}
+// Info appears as a neutral blue
+.btn-info {
+  @include buttonBackground($btnInfoBackground, $btnInfoBackgroundHighlight);
+}
+// Inverse appears as dark gray
+.btn-inverse {
+  @include buttonBackground($btnInverseBackground, $btnInverseBackgroundHighlight);
+}
+
+
+// Cross-browser Jank
+// --------------------------------------------------
+
+button.btn,
+input[type="submit"].btn {
+
+  // Firefox 3.6 only I believe
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  // IE7 has some default padding on button controls
+  *padding-top: 2px;
+  *padding-bottom: 2px;
+  &.btn-large {
+    *padding-top: 7px;
+    *padding-bottom: 7px;
+  }
+  &.btn-small {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+  }
+  &.btn-mini {
+    *padding-top: 1px;
+    *padding-bottom: 1px;
+  }
+}
+
+// BUTTON GROUPS
+// -------------
+
+
+// Make the div behave like a button
+.btn-group {
+  position: relative;
+  @include clearfix(); // clears the floated buttons
+  @include ie7-restore-left-whitespace();
+}
+
+// Space out series of button groups
+.btn-group + .btn-group {
+  margin-left: 5px;
+}
+
+// Optional: Group multiple button groups together for a toolbar
+.btn-toolbar {
+  margin-top: $baseLineHeight / 2;
+  margin-bottom: $baseLineHeight / 2;
+  .btn-group {
+    display: inline-block;
+    @include ie7-inline-block();
+  }
+}
+
+// Float them, remove border radius, then re-add to first and last elements
+.btn-group > .btn {
+  position: relative;
+  float: left;
+  margin-left: -1px;
+  @include border-radius(0);
+}
+// Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
+.btn-group > .btn:first-child {
+  margin-left: 0;
+     -webkit-border-top-left-radius: 4px;
+         -moz-border-radius-topleft: 4px;
+             border-top-left-radius: 4px;
+  -webkit-border-bottom-left-radius: 4px;
+      -moz-border-radius-bottomleft: 4px;
+          border-bottom-left-radius: 4px;
+}
+// Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
+.btn-group > .btn:last-child,
+.btn-group > .dropdown-toggle {
+     -webkit-border-top-right-radius: 4px;
+         -moz-border-radius-topright: 4px;
+             border-top-right-radius: 4px;
+  -webkit-border-bottom-right-radius: 4px;
+      -moz-border-radius-bottomright: 4px;
+          border-bottom-right-radius: 4px;
+}
+// Reset corners for large buttons
+.btn-group > .btn.large:first-child {
+  margin-left: 0;
+     -webkit-border-top-left-radius: 6px;
+         -moz-border-radius-topleft: 6px;
+             border-top-left-radius: 6px;
+  -webkit-border-bottom-left-radius: 6px;
+      -moz-border-radius-bottomleft: 6px;
+          border-bottom-left-radius: 6px;
+}
+.btn-group > .btn.large:last-child,
+.btn-group > .large.dropdown-toggle {
+     -webkit-border-top-right-radius: 6px;
+         -moz-border-radius-topright: 6px;
+             border-top-right-radius: 6px;
+  -webkit-border-bottom-right-radius: 6px;
+      -moz-border-radius-bottomright: 6px;
+          border-bottom-right-radius: 6px;
+}
+
+// On hover/focus/active, bring the proper btn to front
+.btn-group > .btn:hover,
+.btn-group > .btn:focus,
+.btn-group > .btn:active,
+.btn-group > .btn.active {
+  z-index: 2;
+}
+
+// On active and open, don't show outline
+.btn-group .dropdown-toggle:active,
+.btn-group.open .dropdown-toggle {
+  outline: 0;
+}
+
+
+
+// Split button dropdowns
+// ----------------------
+
+// Give the line between buttons some depth
+.btn-group > .dropdown-toggle {
+  padding-left: 8px;
+  padding-right: 8px;
+  @include box-shadow(#{inset 1px 0 0 rgba(255,255,255,.125), inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05)});
+  *padding-top: 4px;
+  *padding-bottom: 4px;
+}
+.btn-group > .btn-mini.dropdown-toggle {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.btn-group > .btn-small.dropdown-toggle {
+  *padding-top: 4px;
+  *padding-bottom: 4px;
+}
+.btn-group > .btn-large.dropdown-toggle {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.btn-group.open {
+
+  // The clickable button for toggling the menu
+  // Remove the gradient and set the same inset shadow as the :active state
+  .dropdown-toggle {
+    background-image: none;
+    @include box-shadow(#{inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05)});
+  }
+
+  // Keep the hover's background when dropdown is open
+  .btn.dropdown-toggle {
+    background-color: $btnBackgroundHighlight;
+  }
+  .btn-primary.dropdown-toggle {
+    background-color: $btnPrimaryBackgroundHighlight;
+  }
+  .btn-warning.dropdown-toggle {
+    background-color: $btnWarningBackgroundHighlight;
+  }
+  .btn-danger.dropdown-toggle {
+    background-color: $btnDangerBackgroundHighlight;
+  }
+  .btn-success.dropdown-toggle {
+    background-color: $btnSuccessBackgroundHighlight;
+  }
+  .btn-info.dropdown-toggle {
+    background-color: $btnInfoBackgroundHighlight;
+  }
+  .btn-inverse.dropdown-toggle {
+    background-color: $btnInverseBackgroundHighlight;
+  }
+}
+
+
+// Reposition the caret
+.btn .caret {
+  margin-top: 7px;
+  margin-left: 0;
+}
+.btn:hover .caret,
+.open.btn-group .caret {
+  @include opacity(100);
+}
+// Carets in other button sizes
+.btn-mini .caret {
+  margin-top: 5px;
+}
+.btn-small .caret {
+  margin-top: 6px;
+}
+.btn-large .caret {
+  margin-top: 6px;
+  border-left-width:  5px;
+  border-right-width: 5px;
+  border-top-width:   5px;
+}
+// Upside down carets for .dropup
+.dropup .btn-large .caret {
+  border-bottom: 5px solid $black;
+  border-top: 0;
+}
+
+
+
+// Account for other colors
+.btn-primary,
+.btn-warning,
+.btn-danger,
+.btn-info,
+.btn-success,
+.btn-inverse {
+  .caret {
+    border-top-color: $white;
+    border-bottom-color: $white;
+    @include opacity(75);
+  }
+}

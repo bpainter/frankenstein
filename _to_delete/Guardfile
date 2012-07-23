@@ -1,5 +1,3 @@
-# May no longer be necessary with the new watch parameters built into Nanoc
-
 # Sets what files to watch so as you make changes to content, stylesheets, layouts, etc
 # the browser will automatically refresh.
 # Requires the 'guard' & 'guard-livereload' gems found in the 'Gemfile'
@@ -15,10 +13,10 @@
 # you can set the options with something like 
 # { }"guard 'livereload', :apply_js_live => 'false', :apply_css_live => 'false' do"
 
-# guard 'livereload' do
-#   watch(%r{content/.+\.(erb|haml|md|markdown|html|yaml|txt|sass|scss|css)})
-#   watch(%r{layouts/.+\.(erb|haml|md|markdown|html|yaml)})
-# end
+guard 'livereload' do
+  watch(%r{content/.+\.(erb|haml|md|markdown|html|yaml|txt|sass|scss|css)})
+  watch(%r{layouts/.+\.(erb|haml|md|markdown|html|yaml)})
+end
 
 # playing around with the guard gem for nanoc. personally I prefer the guard livereload gem
 # guard 'nanoc' do
