@@ -16,7 +16,7 @@
 // Built as a nice OOCSS system to make the creation of 
 // individual pages easier to maintain & create.
 // 
-// Combines the various structure, widgets & responsive 
+// Combines the various structure, modules & responsive 
 // partials.
 // ---------------------------------------------------- 
 
@@ -35,28 +35,28 @@
 @import "structure/sprites";
 
 
-// Widgets: Navigation
-@import "widgets/navs";
-@import "widgets/nav_dropdown";
+// modules: Navigation
+@import "modules/navs";
+@import "modules/nav_dropdown";
 
-// Widgets: Forms
-@import "widgets/forms";
-@import "widgets/buttons";
+// modules: Forms
+@import "modules/forms";
+@import "modules/buttons";
 
-// Widgets: Alerts & Messaging
-@import "widgets/alerts";
+// modules: Alerts & Messaging
+@import "modules/alerts";
 
-// Widgets: Misc
-@import "widgets/accordion";
-@import "widgets/breadcrumbs";
-@import "widgets/carousel";
-@import "widgets/modals";
-@import "widgets/pager";
-@import "widgets/pagination";
-@import "widgets/popovers";
-@import "widgets/progress-bars";
-@import "widgets/tables";
-@import "widgets/tooltip";
+// modules: Misc
+@import "modules/accordion";
+@import "modules/breadcrumbs";
+@import "modules/carousel";
+@import "modules/modals";
+@import "modules/pager";
+@import "modules/pagination";
+@import "modules/popovers";
+@import "modules/progress-bars";
+@import "modules/tables";
+@import "modules/tooltip";
 
 // Responsive
 @import "responsive/1382px";
