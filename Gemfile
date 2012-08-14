@@ -24,4 +24,4 @@ gem 'guard-livereload'
 # gem 'guard-nanoc'
 
 # you can install growl if you want notification support on OSX
-gem 'growl'
+# gem 'growl'
